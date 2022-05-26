@@ -1,6 +1,6 @@
 # ERP System App Experimental
 
-This is only experimental project, has not been tested.
+This is only experimental project.
 
 ## Features
 

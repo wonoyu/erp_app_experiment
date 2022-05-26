@@ -1,0 +1,9 @@
+{
+    "dart.flutterSdkPath": "/home/ahmad/snap/flutter/common/flutter",
+    "yaml.schemas": {
+        "https://json.schemastore.org/dart-build.json": [
+            "build.yaml",
+            "file:///home/ahmad/Work/socketspace/gsp-app1/packages/core/build.yaml"
+        ]
+    }
+}

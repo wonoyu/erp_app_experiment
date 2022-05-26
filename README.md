@@ -1,10 +1,16 @@
-# gsp_app1
+# ERP System App Experimental
 
-A new Flutter project.
+This is only experimental project, has not been tested.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+### - Authentication
+
+The authentication in this project only features login. User can use any email and password to login as it's only experimental.
+
+### - Home Page
+
+In this feature, User can look the main modules on top
 
 A few resources to get you started if this is your first Flutter project:
 

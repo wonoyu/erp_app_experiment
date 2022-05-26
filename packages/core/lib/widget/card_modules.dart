@@ -70,47 +70,50 @@ class TopCard extends StatelessWidget {
     final theme = Theme.of(context);
     final borderRadius = BorderRadius.circular(20.0);
     final size = MediaQuery.of(context).size;
-    return Container(
-      decoration: BoxDecoration(borderRadius: borderRadius),
-      height: size.height * 0.20,
-      width: size.width,
-      child: Stack(
-        children: [
-          BackdropFilter(
-            filter: ImageFilter.blur(
-              sigmaX: 2,
-              sigmaY: 2,
-            ),
-            child: Container(
-              decoration: BoxDecoration(borderRadius: borderRadius),
-            ),
-          ),
-          Container(
-            padding: const EdgeInsets.all(AppConstants.margin / 2),
-            decoration: BoxDecoration(
-              borderRadius: borderRadius,
-              border: Border.all(color: Colors.white.withOpacity(0.2)),
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [
-                  Colors.white.withOpacity(0.4),
-                  Colors.white.withOpacity(0.1)
-                ],
+    return Hero(
+      tag: title,
+      child: Container(
+        decoration: BoxDecoration(borderRadius: borderRadius),
+        height: size.height * 0.20,
+        width: size.width,
+        child: Stack(
+          children: [
+            BackdropFilter(
+              filter: ImageFilter.blur(
+                sigmaX: 2,
+                sigmaY: 2,
+              ),
+              child: Container(
+                decoration: BoxDecoration(borderRadius: borderRadius),
               ),
             ),
-            child: Center(
-                child: ListTile(
-              leading: CircleAvatar(
-                  backgroundColor: Colors.transparent,
-                  backgroundImage: AssetImage(assetIcon)),
-              title: Text(
-                title,
-                style: theme.textTheme.headline5,
+            Container(
+              padding: const EdgeInsets.all(AppConstants.margin / 2),
+              decoration: BoxDecoration(
+                borderRadius: borderRadius,
+                border: Border.all(color: Colors.white.withOpacity(0.2)),
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Colors.white.withOpacity(0.4),
+                    Colors.white.withOpacity(0.1)
+                  ],
+                ),
               ),
-            )),
-          )
-        ],
+              child: Center(
+                  child: ListTile(
+                leading: CircleAvatar(
+                    backgroundColor: Colors.transparent,
+                    backgroundImage: AssetImage(assetIcon)),
+                title: Text(
+                  title,
+                  style: theme.textTheme.headline5,
+                ),
+              )),
+            )
+          ],
+        ),
       ),
     );
   }

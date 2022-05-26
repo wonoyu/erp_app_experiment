@@ -64,7 +64,7 @@ class _HomeBackChildState extends ConsumerState<HomeBackChild> {
       body: modulesVM.when(loaded: (data) {
         return _buildBody(context, theme, navigator, size, backViewModel, data);
       }, error: (error) {
-        WidgetsBinding.instance!.addPostFrameCallback((_) async {
+        WidgetsBinding.instance.addPostFrameCallback((_) async {
           if (error == 'Your session is expired, please re-login') {
             await StorageHelper().deleteDataUser();
             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
@@ -87,7 +87,7 @@ class _HomeBackChildState extends ConsumerState<HomeBackChild> {
             children: [
               Shimmer(
                   child: CardModules(
-                    title: [],
+                    title: const [],
                     controller: controller,
                     onSelectedItemChanged: (index) {},
                     itemExtent: 20,
@@ -250,7 +250,7 @@ class _HomeBackChildState extends ConsumerState<HomeBackChild> {
   Widget _buildDrawer(
       BuildContext context, ThemeData theme, NavigatorState navigator) {
     return CupertinoTheme(
-      data: CupertinoThemeData(),
+      data: const CupertinoThemeData(),
       child: CupertinoActionSheet(
         title: const CircleAvatar(
           backgroundColor: Colors.transparent,

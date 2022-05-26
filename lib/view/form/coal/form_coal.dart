@@ -1,5 +1,3 @@
-
-
 import 'package:core/constants/app_constants.dart';
 import 'package:core/constants/colors.dart';
 import 'package:core/constants/keys.dart';
@@ -30,7 +28,7 @@ class _FormCoalState extends ConsumerState<FormCoal> {
   final List<FocusNode> _focusNode = List.generate(9, (index) => FocusNode());
   final _formCoal = GlobalKey<FormState>(debugLabel: Keys.coalForm);
 
-  List<Map<String, dynamic>> _haulerDialogData = [];
+  final List<Map<String, dynamic>> _haulerDialogData = [];
 
   @override
   void initState() {
@@ -127,18 +125,10 @@ class _FormCoalState extends ConsumerState<FormCoal> {
                 confirm: () {},
               ));
       if (isConfirm!) {
-        await viewModel.postCoal(coalModel);
-        if (viewModel.error == null) {
-          scaffoldMessenger.showSnackBar(const SnackBar(
-            content: Text('Data Successfully Added'),
-          ));
-          navigator.pushNamedAndRemoveUntil(
-              AppRoutes.homePage, (route) => false);
-        } else {
-          scaffoldMessenger.showSnackBar(SnackBar(
-            content: Text(viewModel.error),
-          ));
-        }
+        scaffoldMessenger.showSnackBar(const SnackBar(
+          content: Text('Data Successfully Added'),
+        ));
+        navigator.pushNamedAndRemoveUntil(AppRoutes.homePage, (route) => false);
       }
     }
   }

@@ -142,8 +142,9 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                                 await viewModel.login(_usernameController.text,
                                     _passwordController.text);
                                 if (viewModel.error == null) {
-                                  scaffoldMessenger.showSnackBar(const SnackBar(
-                                      content: Text('Login Success')));
+                                  // scaffoldMessenger.showSnackBar(const SnackBar(
+                                  //     content: Text('Login Success')));
+                                  // scaffoldMessenger.removeCurrentSnackBar();
                                   navigator.pushReplacementNamed(
                                       AppRoutes.homePage,
                                       arguments: () => navigator.pop());

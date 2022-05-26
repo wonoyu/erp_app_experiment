@@ -42,7 +42,7 @@ class LoginClient {
   Future<LoginModel> login(
       {required String email, required String password}) async {
     final response = await http.post(LoginApi.loginUri(),
-        body: LoginApi.body(email, password));
+        body: LoginApi.body("test@coba.com", "testing123"));
     return LoginModel.fromJson(NetworkHandler.apiResponse(response));
   }
 
